@@ -1,0 +1,19 @@
+# SingletonPresentation
+*What is a Singleton?
+    *Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+*What problems do Singletons solve?
+    *Ensure that a class has just a single instance which allows you to control access to some shared resource—for example, a database or a file.
+    *Provide a global access point to that instance,just like a global variable, the Singleton pattern lets you access some object from anywhere in the program.
+        However, it also protects that instance from being overwritten by other code.
+*What do all implementations of Singleton Classes have in common?
+    *Make the default constructor private, to prevent other objects from using the new operator with the Singleton class.
+    *Create a static creation method that acts as a constructor. Under the hood, this method calls the private constructor to create an object and saves it in a static field. All following calls to this method return the cached object.
+*How do you access a Singleton object?
+    *The Singleton class declares the static method getInstance that returns the same instance of its own class.
+     The Singleton’s constructor should be hidden from the client code. Calling the getInstance method should be the only way of getting the Singleton object.
+*How do you implement a Singleton?
+    *Declare a public static creation method for getting the singleton instance.
+    *Implement “lazy initialization” inside the static method. It should create a new object on its first call and put it into the static field.
+     The method should always return that instance on all subsequent calls.
+    *Make the constructor of the class private. The static method of the class will still be able to call the constructor, but not the other objects.
+    *Go over the client code and replace all direct calls to the singleton’s constructor with calls to its static creation method.
